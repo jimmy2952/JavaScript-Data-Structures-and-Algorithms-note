@@ -1,3 +1,5 @@
+const generateRandomArr = require('../../utils/generateRandomArr');
+
 function bubbleSort(arr) {
   const n = arr.length;
   for (let i = 0; i < n; i++) {
@@ -60,14 +62,4 @@ function bubbleSortOpt(arr) {
   return arr;
 }
 
-function generateArr(n) {
-  const arr = [];
-  for (let i = 0; i < n; i++) {
-    const random = Math.floor(Math.random() * n + 1);
-    arr.push(random);
-  }
-  return arr;
-}
-
-
-console.log(bubbleSortOpt(generateArr(10)));
+console.log(bubbleSortOpt(generateRandomArr(10)));

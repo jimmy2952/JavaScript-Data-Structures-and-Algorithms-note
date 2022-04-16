@@ -1,3 +1,5 @@
+const generateRandomArr = require('../../utils/generateRandomArr');
+
 function mergeSort(arr) {
   if (arr.length === 1) {
     return arr;
@@ -44,21 +46,11 @@ function mergePop(left, right) {
   return [...results, ...right, ...left];
 }
 
-function generateArr() {
-  const arr = [];
-  for (let i = 0; i < 100; i++) {
-    const random = Math.floor(Math.random() * 100 + 1);
-    arr.push(random);
-  }
-  return arr;
-}
-
-const arr = generateArr();
 console.time();
-console.log(mergeSort(arr));
+console.log(mergeSort(generateRandomArr(10)));
 console.timeEnd();
 
 console.time('merge sort pop');
-const sortedArr = mergeSortPop(arr);
+const sortedArr = mergeSortPop(generateRandomArr(10));
 console.log(sortedArr.reverse());
 console.timeEnd('merge sort pop');
