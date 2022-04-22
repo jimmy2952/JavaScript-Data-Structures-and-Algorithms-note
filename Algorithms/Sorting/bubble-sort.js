@@ -2,7 +2,7 @@ const generateRandomArr = require('../../utils/generateRandomArr');
 
 function bubbleSort(arr) {
   const n = arr.length;
-  for (let i = 0; i < n; i++) {
+  for (let i = 0; i < n - 1; i++) {
     for (let j = 0; j < (n - i - 1); j++) {
       if (arr[j] > arr[j + 1]) {
         const temp = arr[j];
@@ -17,7 +17,7 @@ function bubbleSort(arr) {
 
 function bubbleSort2(arr) {
   const n = arr.length;
-  for (let i = 0; i < n; i++) {
+  for (let i = 0; i < n - 1; i++) {
     for (let j = i + 1; j < n; j++) {
       if (arr[i] > arr[j]) {
         const temp = arr[i];
@@ -31,7 +31,7 @@ function bubbleSort2(arr) {
 
 function bubbleSort3(arr) {
   const n = arr.length;
-  for (let i = 0; i < n; i++) {
+  for (let i = 0; i < n - 1; i++) {
     for (let j = n - 1; j > i - 1; j--) {
       if (arr[j] > arr[j + 1]) {
         const temp = arr[j];
@@ -45,7 +45,7 @@ function bubbleSort3(arr) {
 
 function bubbleSortOpt(arr) {
   const n = arr.length;
-  for (let i = 0; i < n; i++) {
+  for (let i = 0; i < n - 1; i++) {
     let swapped = false
     for (let j = 0; j < (n - i - 1); j++) {
       if (arr[j] > arr[j + 1]) {
@@ -62,4 +62,7 @@ function bubbleSortOpt(arr) {
   return arr;
 }
 
+console.log(bubbleSort(generateRandomArr(10)));
+console.log(bubbleSort2(generateRandomArr(10)));
+console.log(bubbleSort3(generateRandomArr(10)));
 console.log(bubbleSortOpt(generateRandomArr(10)));
